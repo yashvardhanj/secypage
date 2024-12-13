@@ -1,0 +1,85 @@
+/* src/header.css */
+
+.team-header {
+    background-color: #B69354; /* Golden color from existing palette */
+    width: 100%;
+    padding: 20px 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  .header-content {
+    display: flex;
+    justify-content: center; /* Center items horizontally */
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    position: relative; /* Allows absolute positioning of the button */
+  }
+  
+  .header-title {
+    color: #F3EDE3; /* Light cream color from existing palette */
+    font-size: 2.5rem;
+    margin: 0;
+    text-align: center;
+    /* Removed flex-grow: 1; */
+  }
+  
+  .show-secretariat-btn {
+    background-color: #574A73; /* Dark purple from existing palette */
+    color: #F3EDE3; /* Light cream color */
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    
+    position: absolute; /* Position the button to the right */
+    right: 40px; /* Align it with the original padding */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust for exact centering */
+  }
+  
+  .show-secretariat-btn:hover {
+    background-color: #CDC9E3; /* Light purple from existing palette */
+    color: #363537; /* Dark text color */
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 665px) {
+    /* Mobile Styles */
+    .header-content {
+      flex-direction: column;
+      padding: 0 20px;
+    }
+  
+    .header-title {
+      margin-bottom: 15px;
+      font-size: 2rem;
+    }
+  
+    .show-secretariat-btn {
+      /* Remove absolute positioning */
+      position: static;
+      transform: none;
+      margin: 10px auto 0; /* Center the button with top margin */
+      width: auto; /* Adjust width to content */
+      padding: 8px 16px; /* Reduce padding for smaller size */
+      font-size: 0.9rem; /* Decrease font size */
+      border-radius: 4px; /* Slightly smaller border radius */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    /* Additional Small Screen Adjustments */
+    .header-title {
+      font-size: 1.5rem;
+    }
+  
+    .show-secretariat-btn {
+      font-size: 0.9rem;
+      padding: 8px 16px;
+    }
+  }

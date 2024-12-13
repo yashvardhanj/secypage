@@ -1,0 +1,344 @@
+/* src/App.css */
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: "EB Garamond", serif;
+  font-optical-sizing: auto;
+  font-weight: 600; /* Adjust as needed between 400 to 800 */
+  font-style: normal;
+  height: 100%;
+  overflow-x: hidden;
+  background-color: #F3EDE3; /* Default background color */
+}
+
+/* New Header Styles */
+.team-header {
+  background-color: #B69354; /* Golden color from existing palette */
+  width: 100%;
+  padding: 20px 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header-content {
+  display: flex;
+  justify-content: center; /* Center items horizontally */
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  position: relative; /* Added to allow absolute positioning of the button */
+}
+
+.header-title {
+  color: #F3EDE3; /* Light cream color from existing palette */
+  font-size: 2.5rem;
+  margin: 0;
+  text-align: center;
+  /* Removed flex-grow: 1; */
+}
+
+.show-secretariat-btn {
+  background-color: #574A73; /* Dark purple from existing palette */
+  color: #F3EDE3; /* Light cream color */
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  
+  position: absolute; /* Position the button to the right */
+  right: 40px; /* Align it with the original padding */
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%); /* Adjust for exact centering */
+}
+
+.show-secretariat-btn:hover {
+  background-color: #CDC9E3; /* Light purple from existing palette */
+  color: #363537; /* Dark text color */
+}
+
+/* Gallery and Container */
+.gallery {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  width: 100%;
+  /* Removed height: 100vh; to allow sections to adjust their own heights */
+}
+
+/* Content Sections */
+.content-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  min-height: 100vh; /* Default min-height */
+  background-color: #F3EDE3; /* Default background color */
+  transition: background-color 1s ease;
+  box-sizing: border-box;
+}
+
+/* Adjusted padding for better spacing */
+.content-section:not(:first-child) {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/* Reduce the height of the first content-section to accommodate header and picture */
+.content-section:first-child {
+  min-height: calc(100vh - 80px); /* Adjust 80px based on actual header height */
+  padding-top: 10px; /* Reduced top padding */
+}
+
+.text {
+  width: 55%; /* Adjusted width to move content more to the right */
+  color: black; /* Set text color */
+  padding-left: 40px; /* Increased padding to shift text further to the right */
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 0.5s ease-out;
+}
+
+.image {
+  width: 40%; /* Adjusted width to accommodate image on the right */
+  position: relative;
+}
+
+.desktopPhoto {
+  position: relative;
+  width: 40%; /* Set to 40% for larger screens */
+}
+
+.desktopPhoto img {
+  width: 100%;
+  height: auto;
+  border: 7px solid #B69354; /* Default border color */
+  border-radius: 10px; /* Optional for rounded corners */
+  box-sizing: border-box; /* Ensures the border is included in the element's dimensions */
+  transition: all 1s ease-out;
+}
+
+/* Social Icons Styling */
+.social-icons {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px; /* Increased spacing */
+}
+
+.social-icons a {
+  color: #363537; /* Updated to match text color */
+  font-size: 1.5rem; /* Increased size */
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Add white circle with golden border */
+  background-color: #FFFFFF; /* White background */
+  border: 2px solid #B69354; /* Default golden border */
+  border-radius: 50%; /* Circular shape */
+  width: 50px; /* Increased size for better visibility */
+  height: 50px;
+}
+
+/* Hover Effects */
+.social-icons a:hover {
+  /* Hover color remains customizable */
+}
+
+/* Specific Colors for Each Icon (Optional) */
+.social-icons a:nth-child(1):hover {
+  color: #3b5998; /* Facebook Blue */
+}
+
+.social-icons a:nth-child(2):hover {
+  color: #0077b5; /* LinkedIn Blue */
+}
+
+.social-icons a:nth-child(3):hover {
+  color: #C13584; /* Instagram Gradient Approximation */
+}
+
+/* Increase Text Size */
+.text h2 {
+  font-size: 2.3rem; /* Larger headings */
+}
+
+.text p {
+  font-size: 1.5rem; /* Larger role texts */
+}
+
+/* Scroll Down Text Styling */
+.scroll-down {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 1.5rem;
+  color: #363537;
+  opacity: 0.7;
+  animation: bounce 2s infinite;
+  z-index: 1000;
+}
+
+/* Bounce Animation for Scroll Down */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-5px);
+  }
+  60% {
+    transform: translateY(-3px);
+  }
+}
+
+/* Dynamic Border Colors Based on Background */
+.bg-light-cream .desktopPhoto img,
+.bg-light-cream .social-icons a {
+  border-color: #B69354; /* Golden border when background is light cream */
+}
+
+.bg-golden .desktopPhoto img,
+.bg-golden .social-icons a {
+  border-color: #F3EDE3; /* Light cream border when background is golden */
+}
+
+.bg-light-purple .desktopPhoto img,
+.bg-light-purple .social-icons a {
+  border-color: #574A73; /* Dark purple border when background is light purple */
+}
+
+.bg-dark-purple .desktopPhoto img,
+.bg-dark-purple .social-icons a {
+  border-color: #CDC9E3; /* Light purple border when background is dark purple */
+}
+
+/* Responsive Styles */
+@media (max-width: 665px) {
+  /* Mobile Styles */
+  .header-content {
+    flex-direction: column;
+    padding: 0 20px;
+  }
+
+  .header-title {
+    margin-bottom: 15px;
+    font-size: 2rem;
+  }
+
+  .show-secretariat-btn {
+    /* Removed position: absolute; */
+    width: auto; /* Changed from 100% to auto */
+    max-width: 200px; /* Set a maximum width */
+    margin: 10px auto 0; /* Center the button horizontally */
+    display: block; /* Ensure it's a block element */
+    padding: 10px 20px; /* Adjusted padding */
+    font-size: 1rem; /* Adjusted font size */
+  }
+
+  .content-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 15px 20px; /* Further reduced padding for mobile */
+  }
+
+  .text, .image {
+    width: 100%;
+    padding-left: 0; /* Remove padding on mobile */
+  }
+
+  .image {
+    margin-top: 20px;
+  }
+
+  .desktopPhoto {
+    width: 100%; /* Override to 100% for mobile */
+  }
+
+  .desktopPhoto img {
+    width: 80%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .social-icons {
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+  }
+
+  .social-icons a {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+
+  .text h2 {
+    font-size: 1.6rem;
+  }
+
+  .text p {
+    font-size: 1.1rem;
+  }
+
+  .scroll-down {
+    font-size: 1.2rem;
+    bottom: 15px;
+    right: 15px;
+  }
+
+  /* Ensure text is visible */
+  .reveal {
+    opacity: 1;
+    transform: translateY(0);
+    transition: none;
+  }
+}
+
+/* Additional Small Screen Adjustments */
+@media (max-width: 480px) {
+  /* Further adjustments for very small screens */
+  .header-title {
+    font-size: 1.5rem;
+  }
+
+  .show-secretariat-btn {
+    font-size: 1rem;
+    padding: 10px 0;
+    max-width: 180px; /* Further reduce max-width */
+  }
+
+  .social-icons a {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+
+  .text h2 {
+    font-size: 1.4rem;
+  }
+
+  .text p {
+    font-size: 1rem;
+  }
+
+  .desktopPhoto img {
+    width: 100%;
+    max-width: 250px;
+  }
+}
+
+/* Accessibility: Focus States */
+.social-icons a:focus {
+  outline: 2px solid #B69354; /* Golden focus outline */
+  outline-offset: 2px;
+}
